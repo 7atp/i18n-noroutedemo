@@ -4,7 +4,6 @@ export default function ({ isHMR, app, store, route, params, req, error, redirec
   }
 
   if (req) {
-    if (route.name) {
       let locale = null;
 
       // check if the locale cookie is set
@@ -24,6 +23,5 @@ export default function ({ isHMR, app, store, route, params, req, error, redirec
 
       store.commit('SET_LANG', locale);
       app.i18n.locale = store.state.locale;
-    }
   }
 };
